@@ -10,11 +10,13 @@ before_script:
 - ./setup-tests.sh
 script:
 - gradle check -i
-- curl -s https://raw.githubusercontent.com/EnMasseProject/travis-scripts/master/docker-build.sh
-  | bash /dev/stdin enmasseproject/topic-forwarder .
+- ./docker-build.sh enmasseproject/topic-forwarder .
 - curl -s https://raw.githubusercontent.com/EnMasseProject/travis-scripts/master/generate-bintray-descriptor.sh
   | bash /dev/stdin topic-forwarder build/distributions/topic-forwarder.tgz > .bintray.json
 - ./run-tests.sh
+after_success:
+- ./docker-push.sh enmasseproject/topic-forwarder
+
 env:
   global:
   - COMMIT=${TRAVIS_COMMIT::8}
