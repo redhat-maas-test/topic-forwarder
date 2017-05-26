@@ -10,7 +10,7 @@ before_script:
 - ./setup-tests.sh
 script:
 - gradle check -i
-- ./docker-build.sh enmasseproject/topic-forwarder docker
+- ./docker-build.sh enmasseproject/topic-forwarder .
 - curl -s https://raw.githubusercontent.com/EnMasseProject/travis-scripts/master/generate-bintray-descriptor.sh
   | bash /dev/stdin topic-forwarder build/distributions/topic-forwarder.tgz > .bintray.json
 - ./run-tests.sh

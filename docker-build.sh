@@ -15,7 +15,7 @@ echo "DIR IS $DIR"
 
 pwd
 
-docker build --build-arg version=$VERSION -t $REPO:$COMMIT $DIR || exit 1
+docker build --build-arg version=$VERSION -t $REPO:$COMMIT -f $DIR/Dockerfile || exit 1
 
 if [ "$TRAVIS_BRANCH" == "master" ] || [ -n "$TRAVIS_TAG" ]
 then
