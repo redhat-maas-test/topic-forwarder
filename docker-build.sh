@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x 
 
 # Assumes that COMMIT, DOCKER_USER and DOCKER_PASS to be set
 REPO=$1
