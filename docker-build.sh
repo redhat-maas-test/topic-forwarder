@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x 
-
+echo "CURRENT DIR: $PWD"
 # Assumes that COMMIT, DOCKER_USER and DOCKER_PASS to be set
 REPO=$1
 DIR=$2
