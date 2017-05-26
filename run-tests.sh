@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 pushd systemtests
 sleep 20
 cat /etc/hosts
