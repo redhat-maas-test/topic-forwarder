@@ -13,7 +13,7 @@ script:
 - ./docker-build.sh enmasseproject/topic-forwarder . 
 - curl -s https://raw.githubusercontent.com/EnMasseProject/travis-scripts/master/generate-bintray-descriptor.sh
   | bash /dev/stdin topic-forwarder build/distributions/topic-forwarder.tgz > .bintray.json
-- ./run-tests.sh
+- ./run-tests.sh enmasseproject/topic-forwarder $COMMIT
 after_success:
 - ./docker-push.sh enmasseproject/topic-forwarder
 
