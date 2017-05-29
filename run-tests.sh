@@ -1,7 +1,6 @@
 #!/bin/bash
 COMPONENT=$1
 COMMIT=$2
-set -x
 
 pushd systemtests
 sleep 20
