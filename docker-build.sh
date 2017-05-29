@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -x 
 echo "CURRENT DIR: $PWD"
 # Assumes that COMMIT, DOCKER_USER and DOCKER_PASS to be set
