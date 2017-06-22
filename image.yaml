@@ -1,0 +1,20 @@
+version: 1.0
+name: jboss-amqmaas-1-tech-preview/amqmaas10-topicforwarder-openshift
+from: jboss/openjdk18-rhel7:1.0
+user: 185
+dogen:
+    version: "2.0.1"
+    ssl_verify: false
+cmd:
+    - "/opt/topic-forwarder/bin/launch.sh"
+sources:
+    - artifact: topic-forwarder.tgz
+           
+scripts:
+    - package: topic-fowarder
+      exec: install
+    - package: dynamic-resources
+      exec: install 
+envs:
+    - name: "JAVA_HOME"
+      value: "/usr/lib/jvm/java"
