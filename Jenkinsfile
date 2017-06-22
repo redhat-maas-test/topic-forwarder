@@ -22,7 +22,7 @@ node {
 //                sh 'export OPENSHIFT_PROJECT=$BUILD_TAG; curl -s ${SCRIPTS}/run-tests.sh | bash
 //                /dev/stdin "" enmasse/install
 //                jboss-amqmaas-1-tech-preview/amqmaas10-topicforwarder-openshift'
-                junit 'systemtests/target/surefire-reports/TEST-*.xml'
+//                junit 'systemtests/target/surefire-reports/TEST-*.xml'
             }
         }
     }
